@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.rivor</groupId>
-  <artifactId>show-num</artifactId>
+  <artifactId>uninum</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>show-num</name>
+  <name>uninum</name>
   <url>http://maven.apache.org</url>
 
   <properties>
