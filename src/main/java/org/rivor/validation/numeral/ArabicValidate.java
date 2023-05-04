@@ -1,4 +1,4 @@
-package org.rivor.validation.number;
+package org.rivor.validation.numeral;
 
 /**
  * FileName: ArabicValidate.java
@@ -15,7 +15,7 @@ public class ArabicValidate extends NumeralValidate {
      * @param num Arabic numeral
      * @return if it is Arabic numeral
      */
-    public static boolean isArabicNumeral(String num) {
+    public static boolean isArabicNaturalNumeral(String num) {
         if (isNullOrEmpty(num)) {
             return false;
         }

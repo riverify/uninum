@@ -1,7 +1,7 @@
 package org.rivor.validation;
 
 import junit.framework.TestCase;
-import org.rivor.validation.number.ArabicValidate;
+import org.rivor.validation.numeral.ArabicValidate;
 
 /**
  * FileName: ArabicValidateTest.java
@@ -12,6 +12,6 @@ import org.rivor.validation.number.ArabicValidate;
 public class ArabicValidateTest extends TestCase {
 
     public void testIsArabicNumeral() {
-        assertFalse(ArabicValidate.isArabicNumeral(null));
+        assertFalse(ArabicValidate.isArabicNaturalNumeral(null));
     }
 }

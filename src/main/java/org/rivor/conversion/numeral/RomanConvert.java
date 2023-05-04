@@ -1,15 +1,15 @@
-package org.rivor.conversion.number;
+package org.rivor.conversion.numeral;
 
-import org.rivor.exception.number.NoSuchNumberException;
-import org.rivor.validation.number.ArabicValidate;
-import org.rivor.validation.number.RomanValidate;
+import org.rivor.exception.numeral.NoSuchNumberException;
+import org.rivor.validation.numeral.ArabicValidate;
+import org.rivor.validation.numeral.RomanValidate;
 
 /**
  * FileName: RomanConvert.java
  * Date: 5/4/2023
  * Time: 9:57 AM
  * Author: river
- * Description: This is a class to convert Arabic number to Roman number
+ * Description: This is a class to convert Arabic numeral to Roman numeral
  */
 public class RomanConvert {
 
@@ -18,15 +18,15 @@ public class RomanConvert {
 
 
     /**
-     * This method is to convert Arabic number to Roman number, the Arabic number should be between 1 and 3999
+     * This method is to convert Arabic numeral to Roman numeral, the Arabic numeral should be between 1 and 3999
      *
-     * @param arabicNumber the Arabic number to be converted
-     * @return the Roman number, and it is a String type
+     * @param arabicNumber the Arabic numeral to be converted
+     * @return the Roman numeral, and it is a String type
      */
     public static String arabicToRoman(int arabicNumber) {
 
         if (arabicNumber < 1 || arabicNumber > 3999) {
-            throw new NoSuchNumberException(arabicNumber + " can not be converted to Roman number.(1-3999)");
+            throw new NoSuchNumberException(arabicNumber + " can not be converted to Roman numeral.(1-3999)");
         }
 
         StringBuilder romanNumber = new StringBuilder();
@@ -55,8 +55,8 @@ public class RomanConvert {
 
     public static String arabicToRoman(String arabicNumber) {
 
-        // judge if the Arabic number is correct
-        if (!ArabicValidate.isArabicNumeral(arabicNumber)) {
+        // judge if the Arabic numeral is correct
+        if (!ArabicValidate.isArabicNaturalNumeral(arabicNumber)) {
             throw new NoSuchNumberException(arabicNumber + " is not a Arabic numeral.");
         }
 
@@ -65,22 +65,22 @@ public class RomanConvert {
 
 
     /**
-     * This method is to convert Roman number to Arabic number, the Roman number should be between 'I' and 'MMMCMXCIX',
+     * This method is to convert Roman numeral to Arabic numeral, the Roman numeral should be between 'I' and 'MMMCMXCIX',
      * due to that it is almost impossible to use that large Roman numeral, more than this range may cause some potential problems
      *
-     * @param romanNumber the Roman number to be converted
-     * @return the Arabic number, and it is an Integer type
+     * @param romanNumber the Roman numeral to be converted
+     * @return the Arabic numeral, and it is an Integer type
      */
     public static Integer romanToArabic(String romanNumber) {
 
-        // judge if the Roman number is correct
+        // judge if the Roman numeral is correct
         if (!RomanValidate.isRomanNumeral(romanNumber)) {
             throw new NoSuchNumberException(romanNumber + " is not a Roman numeral.");
         }
 
         int arabicNumber = 0;
 
-        // FIXME: 5/4/2023 We just did not handle the larger Roman number, but it is not a good way to throw an exception
+        // FIXME: 5/4/2023 We just did not handle the larger Roman numeral, but it is not a good way to throw an exception
         try {
 
             int i = 0;

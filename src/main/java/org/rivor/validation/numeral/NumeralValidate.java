@@ -1,4 +1,4 @@
-package org.rivor.validation.number;
+package org.rivor.validation.numeral;
 
 /**
  * FileName: NumeralValidate.java
