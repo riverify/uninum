@@ -38,6 +38,6 @@ public class NumeralUtil {
             }
         }
 
-        throw new IllegalArgumentException("The type of num is not supported yet.");
+        throw new IllegalArgumentException("The type of num has not be supported to convert to Roman numeral yet.");
     }
 }
