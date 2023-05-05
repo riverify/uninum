@@ -1,8 +1,8 @@
-package org.rivor.conversion.numeral;
+package org.rivor.numeral.conversion;
 
-import org.rivor.exception.numeral.NoSuchNumberException;
-import org.rivor.validation.numeral.ArabicValidate;
-import org.rivor.validation.numeral.RomanValidate;
+import org.rivor.numeral.exception.NoSuchNumberException;
+import org.rivor.numeral.validation.ArabicValidate;
+import org.rivor.numeral.validation.RomanValidate;
 
 /**
  * FileName: RomanConvert.java

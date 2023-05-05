@@ -1,8 +1,8 @@
 package org.rivor.validation;
 
 import junit.framework.TestCase;
-import org.rivor.conversion.numeral.RomanConvert;
-import org.rivor.validation.numeral.RomanValidate;
+import org.rivor.numeral.conversion.RomanConvert;
+import org.rivor.numeral.validation.RomanValidate;
 
 import java.util.Random;
 

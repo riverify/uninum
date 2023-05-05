@@ -1,4 +1,4 @@
-package org.rivor.exception.numeral;
+package org.rivor.numeral.exception;
 
 /**
  * FileName: NoSuchNumberException.java

@@ -1,4 +1,4 @@
-package org.rivor.conversion.numeral;
+package org.rivor.numeral.conversion;
 
 import junit.framework.TestCase;
 

@@ -1,4 +1,4 @@
-package org.rivor.validation.numeral;
+package org.rivor.numeral.validation;
 
 /**
  * FileName: ArabicValidate.java

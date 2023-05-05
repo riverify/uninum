@@ -1,7 +1,7 @@
 package org.rivor.validation;
 
 import junit.framework.TestCase;
-import org.rivor.validation.numeral.ArabicValidate;
+import org.rivor.numeral.validation.ArabicValidate;
 
 /**
  * FileName: ArabicValidateTest.java

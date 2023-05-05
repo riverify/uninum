@@ -1,10 +1,6 @@
-package org.rivor.utils.numeral;
+package org.rivor.numeral.utils;
 
 import junit.framework.TestCase;
-import org.rivor.conversion.numeral.RomanConvert;
-import org.rivor.validation.numeral.RomanValidate;
-
-import java.util.Random;
 
 /**
  * FileName: NumeralUtilTest.java

@@ -1,8 +1,8 @@
-package org.rivor.utils.numeral;
+package org.rivor.numeral.utils;
 
-import org.rivor.conversion.numeral.RomanConvert;
-import org.rivor.validation.numeral.ArabicValidate;
-import org.rivor.validation.numeral.RomanValidate;
+import org.rivor.numeral.conversion.RomanConvert;
+import org.rivor.numeral.validation.ArabicValidate;
+import org.rivor.numeral.validation.RomanValidate;
 
 /**
  * FileName: NumeralUtil.java
