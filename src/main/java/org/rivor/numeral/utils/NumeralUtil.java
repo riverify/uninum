@@ -1,6 +1,7 @@
 package org.rivor.numeral.utils;
 
 import org.rivor.numeral.conversion.RomanConvert;
+import org.rivor.numeral.entity.IntegerRoman;
 import org.rivor.numeral.validation.ArabicValidate;
 import org.rivor.numeral.validation.RomanValidate;
 
@@ -18,11 +19,11 @@ public class NumeralUtil {
      * @param num the numeral to be converted
      * @return the Roman numeral, and it is a String type
      */
-    public static String toRoman(Object num) {
+    public static IntegerRoman toRoman(Object num) {
 
         // if the num is an Integer, we only need to convert it to Roman numeral
         if (num instanceof Integer) {
-            return RomanConvert.arabicToRoman((Integer) num);
+            return new IntegerRoman((Integer) num);
         }
 
         // if the num is a String
@@ -30,14 +31,39 @@ public class NumeralUtil {
 
             // if the num is a String, judge if it is a Roman numeral or Arabic numeral
             if (ArabicValidate.isArabicNaturalNumeral((String) num)) {
-                return RomanConvert.arabicToRoman((String) num);
+                return new IntegerRoman();
             }
 
             if (RomanValidate.isRomanNumeral((String) num)) {
-                return (String) num;
+                return new IntegerRoman();
             }
         }
 
         throw new IllegalArgumentException("The type of num has not be supported to convert to Roman numeral yet.");
+    }
+
+
+    public static Integer toInteger(Object num) {
+
+        // if the num is an Integer, return it directly
+        if (num instanceof Integer) {
+            return (Integer) num;
+        }
+
+
+        // if the num is a String
+        if (num instanceof String) {
+
+            // if the num is a String, judge if it is a Roman numeral or Arabic numeral
+            if (ArabicValidate.isArabicNaturalNumeral((String) num)) {
+                return Integer.parseInt((String) num);
+            }
+
+            if (RomanValidate.isRomanNumeral((String) num)) {
+                return RomanConvert.romanToArabic((String) num);
+            }
+        }
+
+        throw new IllegalArgumentException("The type of num has not be supported to convert to Integer yet.");
     }
 }

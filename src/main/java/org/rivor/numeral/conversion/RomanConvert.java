@@ -79,37 +79,53 @@ public class RomanConvert {
         }
 
         int arabicNumber = 0;
+        int i = 0;
 
-        // FIXME: 5/4/2023 We just did not handle the larger Roman numeral, but it is not a good way to throw an exception
-        try {
-
-            int i = 0;
-            while (i < romanNumber.length()) {
-
-                int index = 0;
-
-                for (int j = 0; j < ROMAN_NUMBERS.length; j++) {
-                    if (romanNumber.substring(i).startsWith(ROMAN_NUMBERS[j])) {
-                        index = j;
-                        break;
-                    }
-                }
-                if (i < romanNumber.length() - 1 && index % 2 == 0 && index < 6 && romanNumber.substring(i + 1).startsWith(ROMAN_NUMBERS[index + 2])) {
-                    arabicNumber += ARABIC_NUMBERS[index] - ARABIC_NUMBERS[index + 2];
-                    i += 2;
-                } else if (i < romanNumber.length() - 1 && index % 2 == 1 && index < 6 && romanNumber.substring(i + 1).startsWith(ROMAN_NUMBERS[index + 1])) {
-                    arabicNumber += ARABIC_NUMBERS[index] - ARABIC_NUMBERS[index + 1];
-                    i += 2;
-                } else {
-                    arabicNumber += ARABIC_NUMBERS[index];
-                    i++;
-                }
+        while (i < romanNumber.length()) {
+            char romanChar = romanNumber.charAt(i);
+            int arabicChar = getArabicChar(romanChar);
+            if (i == romanNumber.length() - 1) {
+                arabicNumber += arabicChar;
+                break;
             }
+            char nextRomanChar = romanNumber.charAt(i + 1);
+            int nextArabicChar = getArabicChar(nextRomanChar);
+            if (arabicChar < nextArabicChar) {
+                arabicNumber += nextArabicChar - arabicChar;
+                i += 2;
+            } else {
+                arabicNumber += arabicChar;
+                i++;
+            }
+        }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (arabicNumber < 1 || arabicNumber > 3999) {
+            throw new NoSuchNumberException(romanNumber + " can not be converted to Arabic numeral.(1-3999)");
         }
 
         return arabicNumber;
+
+    }
+
+    /**
+     * This is a private method to get the Arabic value of a Roman character
+     */
+    private static int getArabicChar(char romanChar) {
+        switch (romanChar) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            default:
+                return 1000;
+        }
     }
 }
