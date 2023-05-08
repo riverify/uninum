@@ -14,7 +14,7 @@ import org.rivor.numeral.validation.RomanValidate;
 public class NumeralUtil {
 
     /**
-     * This method is to convert any supported numeral to Roman numeral
+     * This method is to convert any supported numeral to IntegerRoman
      *
      * @param num the numeral to be converted
      * @return the Roman numeral, and it is a String type
@@ -31,18 +31,29 @@ public class NumeralUtil {
 
             // if the num is a String, judge if it is a Roman numeral or Arabic numeral
             if (ArabicValidate.isArabicNaturalNumeral((String) num)) {
-                return new IntegerRoman();
+                return new IntegerRoman(Integer.parseInt((String) num));
             }
 
             if (RomanValidate.isRomanNumeral((String) num)) {
-                return new IntegerRoman();
+                return new IntegerRoman((String) num);
             }
+        }
+
+        // if the num is an IntegerRoman
+        if (num instanceof IntegerRoman) {
+            return (IntegerRoman) num;
         }
 
         throw new IllegalArgumentException("The type of num has not be supported to convert to Roman numeral yet.");
     }
 
 
+    /**
+     * Convert any supported numeral to Integer
+     *
+     * @param num the numeral to be converted
+     * @return Integer
+     */
     public static Integer toInteger(Object num) {
 
         // if the num is an Integer, return it directly
@@ -62,6 +73,11 @@ public class NumeralUtil {
             if (RomanValidate.isRomanNumeral((String) num)) {
                 return RomanConvert.romanToArabic((String) num);
             }
+        }
+
+        // if the num is IntegerRoman
+        if (num instanceof IntegerRoman) {
+            return ((IntegerRoman) num).getValue();
         }
 
         throw new IllegalArgumentException("The type of num has not be supported to convert to Integer yet.");

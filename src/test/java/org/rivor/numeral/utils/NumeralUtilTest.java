@@ -1,6 +1,7 @@
 package org.rivor.numeral.utils;
 
 import junit.framework.TestCase;
+import org.rivor.numeral.entity.IntegerRoman;
 
 /**
  * FileName: NumeralUtilTest.java
@@ -28,5 +29,17 @@ public class NumeralUtilTest extends TestCase {
         assertEquals("XII", NumeralUtil.toRoman(12));
         assertEquals("XII", NumeralUtil.toRoman("12"));
 
+    }
+
+
+    public void testToInteger() {
+        System.out.println(NumeralUtil.toInteger("XII"));
+        System.out.println(NumeralUtil.toInteger("12"));
+        System.out.println(NumeralUtil.toInteger(12));
+        System.out.println(NumeralUtil.toInteger(new IntegerRoman(12)));
+        System.out.println(NumeralUtil.toInteger(new IntegerRoman("XII")));
+
+        IntegerRoman roman = new IntegerRoman();
+        System.out.println(NumeralUtil.toInteger(roman));
     }
 }
