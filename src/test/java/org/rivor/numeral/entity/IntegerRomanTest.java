@@ -21,4 +21,10 @@ public class IntegerRomanTest extends TestCase {
 
     }
 
+    public void testMul() {
+        IntegerRoman r1 = new IntegerRoman(3999);
+        IntegerRoman r2 = new IntegerRoman(3999);
+
+        r1.mul(r2);
+    }
 }

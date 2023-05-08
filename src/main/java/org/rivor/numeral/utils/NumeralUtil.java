@@ -9,7 +9,7 @@ import org.rivor.numeral.validation.RomanValidate;
  * FileName: NumeralUtil.java
  * Date: 5/4/2023
  * Time: 11:24 PM
- * Author: river
+ * Author: riverify
  */
 public class NumeralUtil {
 

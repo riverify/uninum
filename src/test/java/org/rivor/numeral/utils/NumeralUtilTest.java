@@ -7,7 +7,7 @@ import org.rivor.numeral.entity.IntegerRoman;
  * FileName: NumeralUtilTest.java
  * Date: 5/4/2023
  * Time: 11:55 PM
- * Author: river
+ * Author: riverify
  */
 public class NumeralUtilTest extends TestCase {
 
