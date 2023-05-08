@@ -97,6 +97,11 @@ public class IntegerRoman implements INum {
 
     // arithmetic - add
 
+    /**
+     * Add the value of the IntegerRoman object
+     *
+     * @param other the IntegerRoman object to be added
+     */
     public void add(IntegerRoman other) {
 
         // if the value of the IntegerRoman object is null, throw an exception
@@ -115,10 +120,20 @@ public class IntegerRoman implements INum {
 
     }
 
+    /**
+     * Add the value of the Integer object
+     *
+     * @param other the Integer object to be added
+     */
     public void add(Integer other) {
         this.add(new IntegerRoman(other));
     }
 
+    /**
+     * Add the value of the String object that represents a Roman numeral
+     *
+     * @param other Roman numeral string to be added
+     */
     public void add(String other) {
         this.add(new IntegerRoman(other));
     }
@@ -126,6 +141,11 @@ public class IntegerRoman implements INum {
 
     // arithmetic - subtract
 
+    /**
+     * Subtract the value of the IntegerRoman object
+     *
+     * @param other the IntegerRoman object to be subtracted
+     */
     public void sub(IntegerRoman other) {
 
         // if the value of the IntegerRoman object is null, throw an exception
@@ -144,10 +164,20 @@ public class IntegerRoman implements INum {
 
     }
 
+    /**
+     * Subtract the value of the Integer object
+     *
+     * @param other the Integer object to be subtracted
+     */
     public void sub(Integer other) {
         this.sub(new IntegerRoman(other));
     }
 
+    /**
+     * Subtract the value of the String object that represents a Roman numeral
+     *
+     * @param other Roman numeral string to be subtracted
+     */
     public void sub(String other) {
         this.sub(new IntegerRoman(other));
     }
@@ -155,6 +185,11 @@ public class IntegerRoman implements INum {
 
     // arithmetic - multiply
 
+    /**
+     * Multiply the value of the IntegerRoman object
+     *
+     * @param other the IntegerRoman object to be multiplied
+     */
     public void mul(IntegerRoman other) {
 
         // if the value of the IntegerRoman object is null, throw an exception
@@ -173,10 +208,20 @@ public class IntegerRoman implements INum {
 
     }
 
+    /**
+     * Multiply the value of the Integer object
+     *
+     * @param other the Integer object to be multiplied
+     */
     public void mul(Integer other) {
         this.mul(new IntegerRoman(other));
     }
 
+    /**
+     * Multiply the value of the String object that represents a Roman numeral
+     *
+     * @param other Roman numeral string to be multiplied
+     */
     public void mul(String other) {
         this.mul(new IntegerRoman(other));
     }
@@ -184,6 +229,11 @@ public class IntegerRoman implements INum {
 
     // arithmetic - divide
 
+    /**
+     * Divide the value of the IntegerRoman object
+     *
+     * @param other the IntegerRoman object to be divided
+     */
     public void div(IntegerRoman other) {
 
         // if the value of the IntegerRoman object is null, throw an exception
@@ -202,10 +252,20 @@ public class IntegerRoman implements INum {
 
     }
 
+    /**
+     * Divide the value of the Integer object
+     *
+     * @param other the Integer object to be divided
+     */
     public void div(Integer other) {
         this.div(new IntegerRoman(other));
     }
 
+    /**
+     * Divide the value of the String object that represents a Roman numeral
+     *
+     * @param other Roman numeral string to be divided
+     */
     public void div(String other) {
         this.div(new IntegerRoman(other));
     }
