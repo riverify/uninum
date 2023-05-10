@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author riverify
  * @version JDK 8
  */
-public class IntegerRoman implements INum {
+public class IntegerRoman extends Number implements Comparable<IntegerRoman> {
 
     /**
      * The Roman numeral string
@@ -39,6 +39,7 @@ public class IntegerRoman implements INum {
         this.value = arabic;
         this.roman = RomanConvert.arabicToRoman(arabic);
     }
+
 
 
     // getter & setter
@@ -82,8 +83,38 @@ public class IntegerRoman implements INum {
     }
 
     @Override
+    public int compareTo(IntegerRoman o) {
+        return this.value.compareTo(o.getValue());
+    }
+
+    @Override
     public String toString() {
         return roman;
+    }
+
+    @Override
+    public int intValue() {
+        return value;
+    }
+
+    @Override
+    public long longValue() {
+        return (long) value;
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) value;
+    }
+
+    @Override
+    public double doubleValue() {
+        return (double) value;
+    }
+
+
+    public static IntegerRoman valueOf(String s) {
+        return new IntegerRoman(s);
     }
 
 
@@ -269,6 +300,5 @@ public class IntegerRoman implements INum {
     public void div(String other) {
         this.div(new IntegerRoman(other));
     }
-
 
 }
